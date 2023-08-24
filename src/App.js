@@ -15,23 +15,28 @@ function App() {
   }; 
  
   function minus(e) { 
-  	// Add the code for the minus function 
+    e.preventDefault(); 
+    setResult((result) => result - Number(inputRef.current.value));  
   };
  
   function times(e) { 
-    // Add the code for the plus function 
+    e.preventDefault(); 
+    setResult((result) => result * Number(inputRef.current.value)); 
   }; 
  
   function divide(e) { 
-    // Add the code for the divide function 
+    e.preventDefault(); 
+    setResult((result) => result / Number(inputRef.current.value));
   };
  
   function resetInput(e) { 
-    // Add the code for the resetInput function 
+    e.preventDefault(); 
+    inputRef.current.value = '';
   }; 
  
   function resetResult(e) { 
-  	// Add the code for the resetResult function 
+    e.preventDefault(); 
+    setResult(0);
   }; 
  
   return ( 
@@ -50,7 +55,7 @@ function App() {
           placeholder="Type a number" 
         /> 
         <button onClick={plus}>add</button> 
-        {/* Add the subtract button */} 
+        <button onClick={minus}>substract</button> 
         {/* Add the multiply button */} 
         {/* Add the divide button */} 
         {/* Add the resetInput button */} 
